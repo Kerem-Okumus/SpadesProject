@@ -15,6 +15,7 @@ deck.dealCards();
 (at the beginning)
 -deck has been created
 -deck has been shuffled
+-cards have been dealt
 -game has started
 -your hand = 1-(2ofDiamonds) ,2-(queenOfHearts) ... etc.
 -what is your bid?

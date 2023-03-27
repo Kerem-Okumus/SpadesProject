@@ -13,13 +13,14 @@ public class Card {
 
 
 
-    // the method that specify the values of the cards. for ex: ace=1 , jack=11 etc. (Switch)
+    // the method that specify the values of the cards. for ex: ace=14 , jack=11 etc. (Switch)
     public void matchValues(){
 
     }
 
 
     public String toString(){
+
         return value+"of"+suit;
 }
 

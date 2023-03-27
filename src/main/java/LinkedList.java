@@ -23,12 +23,12 @@ public class LinkedList {
 
          }
 
-     /*public node search{     //search a card for bots from their hand to make a valid play
+     /*public Node search(int value){     //search a card for bots from their hand to make a valid play
 
     }   */
 
 
-    /* public node getNth(int i){
+    /* public Node getNth(int i){
      return ;
      }
      */
