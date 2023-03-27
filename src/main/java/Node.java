@@ -7,4 +7,11 @@ public class Node {
         this.data=data;
         next=null;
     }
+
+    //setters and getters
+
+
+    public String toString(){
+        return""+ data;
+    }
 }

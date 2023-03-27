@@ -1,7 +1,7 @@
 public class Card {
 
-    private String suit;
-    private int value;
+    private final String suit;
+    private final int value;
 
 
     public Card(String suit, int value)
@@ -10,10 +10,10 @@ public class Card {
         this.value = value;
     }
 
-    /* getters and setters
-*/
 
-    // the method that specify the values of the cards. for ex: ace=1 , jack=11 etc.
+
+
+    // the method that specify the values of the cards. for ex: ace=1 , jack=11 etc. (Switch)
     public void matchValues(){
 
     }

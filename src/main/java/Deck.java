@@ -4,7 +4,7 @@ public class Deck {
      private String [] values = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 
 private int totalCards =52;
-private LinkedList cards;
+private LinkedList cardsInDeck;
 
 
      //constructor of the deck ----> where the cards created(with using nested for loop) and place cards into the deck
