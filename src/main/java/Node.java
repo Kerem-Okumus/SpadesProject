@@ -8,7 +8,7 @@ public class Node {
         next=null;
     }
 
-    //setters and getters
+
 
 
     public String toString(){

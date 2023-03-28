@@ -1,7 +1,7 @@
-public abstract class BotPlayer extends Player implements Play {
+public class BotPlayer extends Player implements BotPlay {
 
 
-    public void botPLay(){
+    public void botPlay(){
 
     }
 
