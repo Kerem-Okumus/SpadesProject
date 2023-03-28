@@ -1,14 +1,6 @@
 public class SpadesGame {
 
-    public static void main(String[] args){
-
-Deck deck = new Deck();
-deck.shuffleDeck();
-deck.dealCards();
-
-
-
-
+    public static void main(String[] args) {
 
 /*   output template:
 
@@ -35,5 +27,12 @@ player won the game with bid: ... and score: ...
 
 
     }
+
+
+    public void setGame() {
+    } // the method that creates deck and the players , shuffles the deck and deals the cards , finally sets the bids
+
+    public void displayHand() {
+    } // method that shows current hand as provided in the output template
 
 }

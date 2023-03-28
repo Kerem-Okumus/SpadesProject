@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="created 2 interfaces for playing">
+    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="Merged node and card classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BotPlay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BotPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BotPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HumanPlay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HumanPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,13 +131,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680007540788</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Merged node and card classes">
+      <created>1680016447620</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680016447620</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="added player class and it's subclasses" />
     <MESSAGE value="created 2 interfaces for playing" />
-    <option name="LAST_COMMIT_MESSAGE" value="created 2 interfaces for playing" />
+    <MESSAGE value="Merged node and card classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged node and card classes" />
   </component>
 </project>

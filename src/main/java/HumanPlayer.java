@@ -1,6 +1,9 @@
-public class HumanPlayer extends Player implements HumanPlay{
+public class HumanPlayer extends Player {
 
-    public void humanPlay(){
+
+    public HumanPlayer(){
 
     }
+
+
 }
