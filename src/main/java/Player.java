@@ -4,10 +4,32 @@ public class Player {
     private int playerScore;
     private Hand hand;
 
-
-public Player(){
+    /**
+     *
+     * @param hand
+     */
+    public Player(Hand hand){
 
 }
+
+     public void setBid(){}
+
+    public void setPlayerScore(){}
+
+    /**
+     *
+     * @return
+     */
+    public int getPlayerScore(){}
+
+    /**
+     *
+     * @param player
+     * @return
+     */
+    public Hand getPlayerHand(Player player){
+
+    }
 
 
 }

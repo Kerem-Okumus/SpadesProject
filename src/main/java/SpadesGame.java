@@ -28,11 +28,41 @@ player won the game with bid: ... and score: ...
 
     }
 
-
+    /**
+     * // the method that creates deck and the players , shuffles the deck and deals the cards
+     */
     public void setGame() {
-    } // the method that creates deck and the players , shuffles the deck and deals the cards , finally sets the bids
+    }
 
-    public void displayHand() {
-    } // method that shows current hand as provided in the output template
+    /**
+     * // method that shows current hand as provided in the output template
+     * @param hand
+     */
+    public void displayHand(Hand hand) {
+    }
 
+    /**
+     * method that gets bids from players
+     */
+    public void setBids(){}
+
+    /**
+     * method that determines the winner of the round and gives 1 point to the winner of the round
+     */
+    public void endRound(){}
+
+    /**
+     * method that checks whether a player won the game or not
+     */
+    public void isGameOver(){}
+
+    /**
+     * method that sets first suit so that game will be continue according to the first card
+     */
+    public void determineSuitOfRound(){}
+
+    /**
+     * method that gives points to players according to the rules
+     */
+    public void givePoints(){}
 }
