@@ -1,7 +1,7 @@
 public class Deck {
 
-     private String [] suits ; //{"Diamonds", "Clubs", "Spades", "Hearts", };
-     private String [] values ; //{"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+     private String [] suits ; // "Diamonds", "Clubs", "Spades", "Hearts",
+     private String [] values ; // "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"
 
 private static final int totalCards =52;
 private LinkedList cardsInDeck;

@@ -1,10 +1,9 @@
 public class LinkedList {
 
-    Node head;
-    Node tail;
+    Card head;
+    Card tail;
  public LinkedList(){
-     head = null;
-     tail = null;
+
  }
 //will be used when creating the deck and hands
      public void insertLast() {
@@ -23,13 +22,22 @@ public class LinkedList {
 
          }
 
-     /*public Node search(int value){     //search a card for bots from their hand to make a valid play
-
-    }   */
-
-
-    /* public Node getNth(int i){
-     return ;
-     }
+    /**
+     *
+     * @param cardInHand
+     * @return
      */
+       public Card search(Hand cardInHand){     //search a card for bots from their hand to make a valid play
+
+    }
+
+    /**
+     *
+     * @param n
+     * @return
+     */
+     public Card getNth(int n){
+
+     }
+
 }
