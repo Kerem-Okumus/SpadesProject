@@ -39,9 +39,9 @@ private LinkedList cardsInDeck =new LinkedList();
          Card tmp;
          Card tmp2;
          for(int i=0;i<totalCards;i++){
-             int index=random.nextInt(totalCards);
-                 while(index==i){
-                     index=random.nextInt(totalCards);
+             int index=random.nextInt(totalCards-1);
+                 while(index==i || index==0 || index==1 ||index==51){
+                     index=random.nextInt(totalCards-1);
                  }
              tmp= cardsInDeck.getNthCard(i);
              tmp2= cardsInDeck.getNthCard(index);
@@ -49,10 +49,20 @@ private LinkedList cardsInDeck =new LinkedList();
              if(i==0){
                  cardsInDeck.deleteFirst();
                  cardsInDeck.insertFirst(tmp2);
-                 if(index !=52 && index!=0 ){
                      cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
                      cardsInDeck.insertMiddle(tmp,cardsInDeck.getNthCard(index-1));
-                 }
+
+             }else if(i !=51){
+                 cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
+                 cardsInDeck.insertMiddle(tmp2,cardsInDeck.getNthCard(index-1));
+                     cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
+                     cardsInDeck.insertMiddle(tmp,cardsInDeck.getNthCard(index-1));
+
+             }else if(i==51){
+                 cardsInDeck.deleteLast();
+                 cardsInDeck.insertLast(tmp2);
+                     cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
+                     cardsInDeck.insertMiddle(tmp,cardsInDeck.getNthCard(index-1));
              }
 
          }

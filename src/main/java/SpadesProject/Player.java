@@ -12,6 +12,7 @@ public class Player {
      */
     public Player(Hand hand){
          this.hand=hand;
+         playerScore=0;
 }
 
      public void setBid(int i){

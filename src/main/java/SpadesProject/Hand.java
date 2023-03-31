@@ -17,6 +17,8 @@ public class Hand {
 
     }
 
-
+    public LinkedList getCardsInHand(){
+        return cardsInHand;
+    }
 
 }

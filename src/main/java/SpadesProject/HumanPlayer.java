@@ -10,6 +10,9 @@ public class HumanPlayer extends Player {
         super(hand);
     }
 
+
+
+
     public void HumanPlayer(){
 
     }

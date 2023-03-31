@@ -6,8 +6,12 @@ public class SpadesGame {
 
     public static void main(String[] args) {
 
-        Deck deck = new Deck();
+        Player p1=new HumanPlayer(new Hand());
+        Player p2=new BotPlayer(new Hand());
+        Player p3=new BotPlayer(new Hand());
+        Player p4=new BotPlayer(new Hand());
 
+        Deck deck = new Deck();
         deck.shuffleDeck();
 
 System.out.println(deck.getDeckLinkedList().toString());
@@ -48,9 +52,10 @@ player won the game with bid: ... and score: ...
     /**
      * // method that shows current hand as provided in the output template
      *
-     * @param hand
+     * @param player
      */
-    public void displayHand(Hand hand) {
+    public void displayHand(Player player) {
+        player.getPlayerHand(player).getCardsInHand();
     }
 
     /**

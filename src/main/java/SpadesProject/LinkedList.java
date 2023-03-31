@@ -15,13 +15,26 @@ public class LinkedList {
  }
 
     public Card getPreviousCard(Card card){
-     Card tmp=head;
+        if (card == head) {
+            return head;
+        }
+        Card tmp = head;
+        Card previous = null;
+        while (tmp != null) {
+            if (tmp.getNextCard() == card) {
+                previous = tmp;
+                break;
+            }
+            tmp = tmp.getNextCard();
+        }
+        return previous;
+     /*Card tmp=head;
      Card previousCard =null;
      while(tmp!= card){
          previousCard =tmp;
          tmp= tmp.getNextCard();
      }
-     return previousCard;
+     return previousCard;*/
     }
 
     public void insertFirst(Card newCard){
