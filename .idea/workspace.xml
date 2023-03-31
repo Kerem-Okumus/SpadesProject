@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="interfaces deleted , and added some methods to main class">
+    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="added table class to collect 4 cards on the table each round and added some functions">
+      <change afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BotPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/BotPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680018052199</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added table class to collect 4 cards on the table each round and added some functions">
+      <created>1680031865485</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680031865485</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -151,6 +165,7 @@
     <MESSAGE value="created 2 interfaces for playing" />
     <MESSAGE value="Merged node and card classes" />
     <MESSAGE value="interfaces deleted , and added some methods to main class" />
-    <option name="LAST_COMMIT_MESSAGE" value="interfaces deleted , and added some methods to main class" />
+    <MESSAGE value="added table class to collect 4 cards on the table each round and added some functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added table class to collect 4 cards on the table each round and added some functions" />
   </component>
 </project>

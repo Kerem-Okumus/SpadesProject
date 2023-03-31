@@ -1,3 +1,5 @@
+package SpadesProject;
+
 public class Player {
 
     private int bid;
@@ -9,18 +11,24 @@ public class Player {
      * @param hand
      */
     public Player(Hand hand){
-
+         this.hand=hand;
 }
 
-     public void setBid(){}
+     public void setBid(int i){
+        bid=i;
+     }
 
-    public void setPlayerScore(){}
+    public void increasePlayerScore(){
+        playerScore++;
+    }
 
     /**
      *
      * @return
      */
-    public int getPlayerScore(){}
+    public int getPlayerScore(){
+        return playerScore;
+    }
 
     /**
      *
@@ -28,7 +36,7 @@ public class Player {
      * @return
      */
     public Hand getPlayerHand(Player player){
-
+         return player.hand;
     }
 
 

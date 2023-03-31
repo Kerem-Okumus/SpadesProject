@@ -1,3 +1,7 @@
+package SpadesProject;
+
+import SpadesProject.LinkedList;
+
 public class Table {
 
     private LinkedList CardsOnTable;

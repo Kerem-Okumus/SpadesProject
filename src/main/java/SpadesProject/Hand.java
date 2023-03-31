@@ -1,3 +1,5 @@
+package SpadesProject;
+
 public class Hand {
 
     private LinkedList cardsInHand;

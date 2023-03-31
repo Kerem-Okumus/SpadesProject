@@ -1,7 +1,13 @@
+package SpadesProject;
+
 public class BotPlayer extends Player {
 
-    public BotPlayer(){
 
+    /**
+     * @param hand
+     */
+    public BotPlayer(Hand hand) {
+        super(hand);
     }
 
     //playing logic for bots

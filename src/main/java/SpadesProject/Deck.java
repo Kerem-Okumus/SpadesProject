@@ -1,3 +1,5 @@
+package SpadesProject;
+
 public class Deck {
 
      private String [] suits ; // "Diamonds", "Clubs", "Spades", "Hearts",

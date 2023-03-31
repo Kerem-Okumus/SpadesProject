@@ -1,3 +1,7 @@
+package SpadesProject;
+
+import SpadesProject.Hand;
+
 public class SpadesGame {
 
     public static void main(String[] args) {
@@ -36,6 +40,7 @@ player won the game with bid: ... and score: ...
 
     /**
      * // method that shows current hand as provided in the output template
+     *
      * @param hand
      */
     public void displayHand(Hand hand) {
@@ -44,25 +49,35 @@ player won the game with bid: ... and score: ...
     /**
      * method that gets bids from players
      */
-    public void setBids(){}
+    public void setBids() {
+    }
 
     /**
      * method that determines the winner of the round and gives 1 point to the winner of the round
      */
-    public void endRound(){}
+    public void endRound() {
+    }
 
     /**
      * method that checks whether a player won the game or not
      */
-    public void isGameOver(){}
+    public void isGameOver() {
+    }
 
     /**
      * method that sets first suit so that game will be continue according to the first card
      */
-    public void determineSuitOfRound(){}
+    public void determineSuitOfRound() {
+    }
 
     /**
      * method that gives points to players according to the rules
      */
-    public void givePoints(){}
+    public void givePoints() {
+    }
+
+
+    public void isValidPlay() {
+
+    }
 }
