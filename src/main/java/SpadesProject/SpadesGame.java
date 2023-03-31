@@ -6,6 +6,13 @@ public class SpadesGame {
 
     public static void main(String[] args) {
 
+        Deck deck = new Deck();
+
+        deck.shuffleDeck();
+
+System.out.println(deck.getDeckLinkedList().toString());
+
+
 /*   output template:
 
 (at the beginning)

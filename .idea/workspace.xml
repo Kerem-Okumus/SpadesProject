@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="added table class to collect 4 cards on the table each round and added some functions">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Card.java" afterDir="false" />
+    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="started to fill the body of the functions and constructors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BotPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/BotPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Hand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +57,19 @@
   }
 }</component>
   <component name="RunManager">
+    <configuration name="SpadesGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SpadesProject.SpadesGame" />
+      <module name="BATAK_card_game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SpadesProject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="BATAK card game" />
       <method v="2">
@@ -76,6 +83,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SpadesGame" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -156,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680031865485</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="started to fill the body of the functions and constructors">
+      <created>1680260576751</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680260576751</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -166,6 +185,21 @@
     <MESSAGE value="Merged node and card classes" />
     <MESSAGE value="interfaces deleted , and added some methods to main class" />
     <MESSAGE value="added table class to collect 4 cards on the table each round and added some functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added table class to collect 4 cards on the table each round and added some functions" />
+    <MESSAGE value="started to fill the body of the functions and constructors" />
+    <option name="LAST_COMMIT_MESSAGE" value="started to fill the body of the functions and constructors" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.OutOfMemoryError" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

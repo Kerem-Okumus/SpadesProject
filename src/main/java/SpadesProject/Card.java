@@ -17,6 +17,10 @@ public class Card {
 
     }
 
+    public Card(String suit, String value) {
+        this.suit = suit;
+        this.value = value;
+    }
     /**
      *
      * @return
@@ -60,7 +64,7 @@ public class Card {
 
     public String toString(){
 
-        return  value+"of"+suit;
+        return  value+" of "+suit+", ";
 }
 
 }

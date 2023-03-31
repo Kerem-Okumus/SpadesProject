@@ -24,6 +24,13 @@ public class LinkedList {
      return previousCard;
     }
 
+    public void insertFirst(Card newCard){
+        if (tail == null) {
+            tail = newCard;
+        }
+        newCard.setNextCard(head);
+        head = newCard;
+    }
 
 //will be used when creating the deck and hands
      public void insertLast(Card newCard) {
@@ -53,6 +60,13 @@ public class LinkedList {
      previous.setNextCard(card.getNextCard());
 
          }
+
+     public void insertMiddle(Card newCard, Card previous){
+     newCard.setNextCard(previous.getNextCard());
+     previous.setNextCard(newCard);
+     }
+
+
 //will be used to play card (removing from hand and deck )
      public void deleteLast(){
      tail= getPreviousCard(tail);
@@ -91,4 +105,13 @@ public class LinkedList {
          return null;
      }
 
+     public String toString(){
+         StringBuilder result=new StringBuilder();
+         Card tmp=head;
+         while (tmp != null) {
+             result.append(tmp).append(" ");
+             tmp = tmp.getNextCard();
+         }
+         return result.toString();
+     }
 }
