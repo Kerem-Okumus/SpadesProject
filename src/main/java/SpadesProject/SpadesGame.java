@@ -1,11 +1,12 @@
 package SpadesProject;
 
 import SpadesProject.Hand;
-
+import java.util.Random;
 public class SpadesGame {
 
     public static void main(String[] args) {
 
+        Random random=new Random();
 
         Player p1=new BotPlayer(new Hand(),1);
         Player p2=new BotPlayer(new Hand(),2);
@@ -15,14 +16,15 @@ public class SpadesGame {
         Deck deck = new Deck();
         deck.shuffleDeck();
         dealCards(deck,p1,p2,p3,p4);
+        Table table =new Table();
 
 
 
-        System.out.println(deck.getDeckLinkedList().toString1());
-        System.out.println(p1.getPlayerHand().getCardsInHand().toString1());
-        System.out.println(p2.getPlayerHand().getCardsInHand().toString1());
-        System.out.println(p3.getPlayerHand().getCardsInHand().toString1());
-        System.out.println(p4.getPlayerHand().getCardsInHand().toString1());
+        System.out.println(p1.getPlayerHand().getCardsInHand().toString());
+        botPlay(p1,table);
+
+        System.out.println(table.getCardsOnTable().toString());
+        System.out.println(p1.getPlayerHand().getCardsInHand().toString());
 
 
 /*   output template:
@@ -47,6 +49,40 @@ public class SpadesGame {
 (at the end of the game)
 player won the game with bid: ... and score: ...
  */
+
+
+    }
+
+    /**
+     * playing logic for bots
+     * @param player
+     * @param table
+     */
+    public static void botPlay(Player player,Table table){
+        Card tmp;
+        int initial=13;
+        if(player.getPlayerIndex()==1){
+            Random random=new Random();
+            int indexOfCard = 12;//random.nextInt(initial);
+            tmp = player.getPlayerHand().getCardsInHand().getNthCard(indexOfCard);
+
+            if(indexOfCard==0){
+                player.getPlayerHand().getCardsInHand().deleteFirst();
+                table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
+            }
+            else if(indexOfCard !=initial-1){
+                player.getPlayerHand().getCardsInHand().deleteMiddle(player.getPlayerHand().getCardsInHand().getNthCard(indexOfCard));
+                table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
+            }
+            else{
+                player.getPlayerHand().getCardsInHand().deleteLast();
+                table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
+            }
+        }
+        initial--;
+
+
+
 
 
     }
@@ -96,38 +132,42 @@ player won the game with bid: ... and score: ...
     public void givePoints() {
     }
 
+    /**
+     * mothod that checks whether the play is valid or not
+     */
+    //public boolean isValidPlay() {}
 
-    public void isValidPlay() {
-
-    }
-
-    //adds a card to hand from deck
-    public static void addCard(Deck d, Player p){
-        Card tmp =d.getDeckLinkedList().getTail();
-        d.getDeckLinkedList().deleteLast();
-        p.getPlayerHand().getCardsInHand().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
+    /**
+     * //adds a card to hand from deck
+     * @param deck
+     * @param player
+     */
+    public static void addCard(Deck deck, Player player){
+        Card tmp =deck.getDeckLinkedList().getTail();
+        deck.getDeckLinkedList().deleteLast();
+        player.getPlayerHand().getCardsInHand().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
     }
 
     /**
      * method that deals all cards
-     * @param d
+     * @param deck
      * @param p1
      * @param p2
      * @param p3
      * @param p4
      */
-    public static void dealCards(Deck d,Player p1,Player p2,Player p3,Player p4){
+    public static void dealCards(Deck deck,Player p1,Player p2,Player p3,Player p4){
         for(int i=0;i<13;i++){
-            addCard(d,p1);
+            addCard(deck,p1);
         }
         for(int i=0;i<13;i++){
-            addCard(d,p2);
+            addCard(deck,p2);
         }
         for(int i=0;i<13;i++){
-            addCard(d,p3);
+            addCard(deck,p3);
         }
         for(int i=0;i<13;i++){
-            addCard(d,p4);
+            addCard(deck,p4);
         }
 
     }

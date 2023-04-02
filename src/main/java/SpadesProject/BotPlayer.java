@@ -1,7 +1,8 @@
 package SpadesProject;
-
+import java.util.Random;
 public class BotPlayer extends Player {
 
+    static Random random=new Random();
 
     /**
      * @param hand
@@ -11,9 +12,6 @@ public class BotPlayer extends Player {
         super(hand, playerIndex);
     }
 
-    //playing logic for bots
-    public void botPlay(){
 
-    }
 
 }

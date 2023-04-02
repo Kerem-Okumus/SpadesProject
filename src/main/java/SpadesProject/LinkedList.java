@@ -100,8 +100,14 @@ public class LinkedList {
      * @param cardInHand
      * @return
      */
-       public Card searchCard(Hand cardInHand){     //search a card for bots from their hand to make a valid play
-     Card tmp =head;
+       public Card searchCard(Card cardInHand){     //search a card for bots from their hand to make a valid play
+           Card tmp;
+           tmp = head;
+           while (tmp != null){
+               if (tmp.getCardSuit() == cardInHand.getCardSuit())
+                   return tmp;
+               tmp = tmp.getNextCard();
+           }
      return null;        //will be fixed later
     }
 
@@ -124,16 +130,17 @@ public class LinkedList {
      }
 
      public String toString(){
-         StringBuilder result=new StringBuilder();
-         Card tmp=head;
-         while (tmp != null) {
-             result.append(tmp.toString()).append(" ");
-             tmp = tmp.getNextCard();
+         String res= "";
+         Card tmp =head;
+         while(tmp !=null){
+             res =res +tmp.toString()+" ";
+             tmp=tmp.getNextCard();
          }
-         return result.toString();
+         return res;
      }
 
-      public String toString1(){
+      public String handToString(){
+         int i=0;
           String res= "";
           Card tmp =head;
           while(tmp !=null){

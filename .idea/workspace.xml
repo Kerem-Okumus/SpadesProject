@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="filled some methods body ,still working on the shuffle method">
+    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="Added some extra methods ,moved some methods, added playerIndex attribute ,completed shuffleDeck method ,completed dealCards method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/BotPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/BotPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +40,9 @@
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2NQYnqL54FVGJ4PZvr5XdxhWBg8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -192,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680296947799</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added some extra methods ,moved some methods, added playerIndex attribute ,completed shuffleDeck method ,completed dealCards method">
+      <created>1680441500817</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680441500817</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -205,7 +215,8 @@
     <MESSAGE value="started to fill the body of the functions and constructors" />
     <MESSAGE value="Deck has created ,working on shuffling it" />
     <MESSAGE value="filled some methods body ,still working on the shuffle method" />
-    <option name="LAST_COMMIT_MESSAGE" value="filled some methods body ,still working on the shuffle method" />
+    <MESSAGE value="Added some extra methods ,moved some methods, added playerIndex attribute ,completed shuffleDeck method ,completed dealCards method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some extra methods ,moved some methods, added playerIndex attribute ,completed shuffleDeck method ,completed dealCards method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

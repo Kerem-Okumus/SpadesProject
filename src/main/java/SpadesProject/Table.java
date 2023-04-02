@@ -4,7 +4,7 @@ import SpadesProject.LinkedList;
 
 public class Table {
 
-    private LinkedList cardsOnTable;
+    private LinkedList cardsOnTable= new LinkedList();
 
     /**
      * method that collect 4 cards from each players hand

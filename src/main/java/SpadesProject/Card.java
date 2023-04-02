@@ -5,11 +5,13 @@ public class Card {
     private final String suit;
     private final String value;
     private Card nextCard;
+
     /**
      * @param suit
      * @param value
      * @param nextCard
      */
+
     public Card(String suit, String value, Card nextCard){
         this.suit=suit;
         this.value=value;
@@ -21,6 +23,7 @@ public class Card {
         this.suit = suit;
         this.value = value;
     }
+
     /**
      *
      * @return
@@ -57,10 +60,6 @@ public class Card {
     public String getCardValue(){
         return value;
     }
-
-
-
-
 
     public String toString(){
 

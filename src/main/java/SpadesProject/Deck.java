@@ -72,13 +72,4 @@ private LinkedList cardsInDeck =new LinkedList();
 
 
 
-     //the method that deals 13 cards to each hand
-    /* public void dealCards(Player p){
-           for(int i =0;i<13;i++) {
-               addCard(p);
-           }
-
-           }*/
-
-
 }

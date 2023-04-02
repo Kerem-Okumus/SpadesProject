@@ -3,9 +3,10 @@ package SpadesProject;
 public class Player {
 
     private int bid;
-    private int playerScore;
+    private int TrickCount;
     private Hand hand;
     private final int playerIndex;
+    private int totalScore;
 
     /**
      *
@@ -13,8 +14,9 @@ public class Player {
      */
     public Player(Hand hand, int playerIndex){
          this.hand=hand;
-         playerScore=0;
+         TrickCount =0;
          this.playerIndex=playerIndex;
+         totalScore=0;
 }
 
 
@@ -24,16 +26,20 @@ public class Player {
         bid=i;
      }
 
-    public void increasePlayerScore(){
-        playerScore++;
+    public int getBid() {
+        return bid;
+    }
+
+    public void increaseTrickCount(){
+        TrickCount++;
     }
 
     /**
      *
      * @return
      */
-    public int getPlayerScore(){
-        return playerScore;
+    public int getTrickCount(){
+        return TrickCount;
     }
 
     /**
@@ -48,7 +54,13 @@ public class Player {
         return playerIndex;
     }
 
+    public int getTotalScore() {
+        return totalScore;
+    }
 
+    public void setTotalScore(int totalScore) {
+        this.totalScore = totalScore;
+    }
 
 }
 
