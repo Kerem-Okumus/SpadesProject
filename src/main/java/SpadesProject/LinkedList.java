@@ -79,6 +79,10 @@ public class LinkedList {
 
          }
 
+     public void deleteCard(Card card){
+
+     }
+
      public void insertMiddle(Card newCard, Card previous){
      newCard.setNextCard(previous.getNextCard());
      previous.setNextCard(newCard);
@@ -97,19 +101,32 @@ public class LinkedList {
 
     /**
      *
-     * @param cardInHand
+     * @param openingCard
      * @return
      */
-       public Card searchCard(Card cardInHand){     //search a card for bots from their hand to make a valid play
+       public Card searchCard(Card openingCard){     //search a card for bots from their hand to make a valid play
            Card tmp;
            tmp = head;
            while (tmp != null){
-               if (tmp.getCardSuit() == cardInHand.getCardSuit())
+               if (tmp.getCardSuit() == openingCard.getCardSuit()) {
                    return tmp;
+               }
                tmp = tmp.getNextCard();
            }
-     return null;        //will be fixed later
+
+           Card tmp1 =head;
+           while(tmp !=null){
+               if(tmp.getCardSuit()=="Spades"){
+                   return tmp1;
+               }
+               tmp1=tmp1.getNextCard();
+           }
+
+
+     return null;
     }
+
+
 
     /**
      *

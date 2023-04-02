@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="Added some extra methods ,moved some methods, added playerIndex attribute ,completed shuffleDeck method ,completed dealCards method">
+    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="modified the search method and also playing logic for bots have been improved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/BotPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/BotPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Table.java" afterDir="false" />
     </list>
@@ -202,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680441500817</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="cards can be successfully added to the table linkedlist, modified some methods, working on the search method and playing logic for bots">
+      <created>1680450457880</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1680450457880</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -216,7 +219,9 @@
     <MESSAGE value="Deck has created ,working on shuffling it" />
     <MESSAGE value="filled some methods body ,still working on the shuffle method" />
     <MESSAGE value="Added some extra methods ,moved some methods, added playerIndex attribute ,completed shuffleDeck method ,completed dealCards method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some extra methods ,moved some methods, added playerIndex attribute ,completed shuffleDeck method ,completed dealCards method" />
+    <MESSAGE value="cards can be successfully added to the table linkedlist, modified some methods, working on the search method and playing logic for bots" />
+    <MESSAGE value="modified the search method and also playing logic for bots have been improved" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified the search method and also playing logic for bots have been improved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
