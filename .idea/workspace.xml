@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="Deck has created ,working on shuffling it">
+    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="filled some methods body ,still working on the shuffle method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/BotPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/BotPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680277143157</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="filled some methods body ,still working on the shuffle method">
+      <created>1680296947799</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1680296947799</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -197,7 +204,8 @@
     <MESSAGE value="added table class to collect 4 cards on the table each round and added some functions" />
     <MESSAGE value="started to fill the body of the functions and constructors" />
     <MESSAGE value="Deck has created ,working on shuffling it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deck has created ,working on shuffling it" />
+    <MESSAGE value="filled some methods body ,still working on the shuffle method" />
+    <option name="LAST_COMMIT_MESSAGE" value="filled some methods body ,still working on the shuffle method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

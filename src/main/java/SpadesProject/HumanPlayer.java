@@ -5,17 +5,13 @@ public class HumanPlayer extends Player {
 
     /**
      * @param hand
+     * @param playerIndex
      */
-    public HumanPlayer(Hand hand) {
-        super(hand);
+    public HumanPlayer(Hand hand, int playerIndex) {
+        super(hand,playerIndex);
     }
 
 
-
-
-    public void HumanPlayer(){
-
-    }
 
 
 }

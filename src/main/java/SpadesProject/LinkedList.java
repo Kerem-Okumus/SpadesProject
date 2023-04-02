@@ -5,8 +5,8 @@ import SpadesProject.Hand;
 
 public class LinkedList {
 
-     protected Card head;
-     protected Card tail;
+    protected Card head;
+    protected Card tail;
 
  public LinkedList(){
     head= null;
@@ -14,8 +14,12 @@ public class LinkedList {
 
  }
 
+    public Card getTail() {
+        return tail;
+    }
+
     public Card getPreviousCard(Card card){
-        if (card == head) {
+       /* if (card == head) {
             return head;
         }
         Card tmp = head;
@@ -27,19 +31,20 @@ public class LinkedList {
             }
             tmp = tmp.getNextCard();
         }
-        return previous;
-     /*Card tmp=head;
+        return previous;*/
+     Card tmp=head;
      Card previousCard =null;
      while(tmp!= card){
          previousCard =tmp;
          tmp= tmp.getNextCard();
      }
-     return previousCard;*/
+     return previousCard;
     }
 
     public void insertFirst(Card newCard){
-        if (tail == null) {
-            tail = newCard;
+        if (head == null) {
+
+            tail=newCard;
         }
         newCard.setNextCard(head);
         head = newCard;
@@ -122,9 +127,20 @@ public class LinkedList {
          StringBuilder result=new StringBuilder();
          Card tmp=head;
          while (tmp != null) {
-             result.append(tmp).append(" ");
+             result.append(tmp.toString()).append(" ");
              tmp = tmp.getNextCard();
          }
          return result.toString();
      }
+
+      public String toString1(){
+          String res= "";
+          Card tmp =head;
+          while(tmp !=null){
+              res =res +tmp.toString()+" ";
+              tmp=tmp.getNextCard();
+          }
+          return res;
+      }
+
 }

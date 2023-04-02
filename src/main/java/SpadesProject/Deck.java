@@ -3,11 +3,11 @@ package SpadesProject;
 import java.util.Random;
 
 public class Deck {
-
+    Random random = new Random();
      private String [] suits = {"Diamonds", "Clubs", "Spades", "Hearts"};
      private String [] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
 
-private static final int totalCards =52 ;
+private final int totalCards =52 ;
 private LinkedList cardsInDeck =new LinkedList();
 
 
@@ -34,45 +34,51 @@ private LinkedList cardsInDeck =new LinkedList();
      }
 
      //shuffles deck with a for loop (using Random )
-     public void shuffleDeck(){
-         Random random=new Random();
+     public void shuffleDeck() {
+
          Card tmp;
          Card tmp2;
-         for(int i=0;i<totalCards;i++){
-             int index=random.nextInt(totalCards-1);
-                 while(index==i || index==0 || index==1 ||index==51){
-                     index=random.nextInt(totalCards-1);
-                 }
-             tmp= cardsInDeck.getNthCard(i);
-             tmp2= cardsInDeck.getNthCard(index);
-
-             if(i==0){
-                 cardsInDeck.deleteFirst();
-                 cardsInDeck.insertFirst(tmp2);
-                     cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
-                     cardsInDeck.insertMiddle(tmp,cardsInDeck.getNthCard(index-1));
-
-             }else if(i !=51){
-                 cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
-                 cardsInDeck.insertMiddle(tmp2,cardsInDeck.getNthCard(index-1));
-                     cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
-                     cardsInDeck.insertMiddle(tmp,cardsInDeck.getNthCard(index-1));
-
-             }else if(i==51){
-                 cardsInDeck.deleteLast();
-                 cardsInDeck.insertLast(tmp2);
-                     cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
-                     cardsInDeck.insertMiddle(tmp,cardsInDeck.getNthCard(index-1));
+         int index;
+         for (int i = 1; i < totalCards-1; i++) {
+             index = random.nextInt(50) + 1;
+             while (i == index) {
+                 index = random.nextInt(50) + 1;
              }
+             tmp = cardsInDeck.getNthCard(i);
+             tmp2 = cardsInDeck.getNthCard(index);
+
+             /*if(i==0){
+                 cardsInDeck.deleteFirst();
+                 cardsInDeck.insertFirst(new Card(tmp2.getCardSuit(),tmp2.getCardValue()));
+                 cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
+                 cardsInDeck.insertMiddle(new Card(tmp.getCardSuit(),tmp.getCardValue()), cardsInDeck.getNthCard(index - 1));
+
+             }*/
+
+                 cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(i));
+                 cardsInDeck.insertMiddle(new Card(tmp2.getCardSuit(),tmp2.getCardValue()), cardsInDeck.getNthCard(index - 1));
+                 cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
+                 cardsInDeck.insertMiddle(new Card(tmp.getCardSuit(),tmp.getCardValue()), cardsInDeck.getNthCard(index - 1));
+
+             /*if (i == 51) {
+                 cardsInDeck.deleteLast();
+                 cardsInDeck.insertLast(new Card(tmp2.getCardSuit(),tmp2.getCardValue()));
+                 cardsInDeck.deleteMiddle(cardsInDeck.getNthCard(index));
+                 cardsInDeck.insertMiddle(new Card(tmp.getCardSuit(),tmp.getCardValue()), cardsInDeck.getNthCard(index - 1));
+             }*/
 
          }
-}
-
-     //the method that deals 13 cards to each hand
-     public void dealCards(){
-
      }
 
+
+
+     //the method that deals 13 cards to each hand
+    /* public void dealCards(Player p){
+           for(int i =0;i<13;i++) {
+               addCard(p);
+           }
+
+           }*/
 
 
 }

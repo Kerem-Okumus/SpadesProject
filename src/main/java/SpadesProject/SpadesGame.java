@@ -6,15 +6,23 @@ public class SpadesGame {
 
     public static void main(String[] args) {
 
-        Player p1=new HumanPlayer(new Hand());
-        Player p2=new BotPlayer(new Hand());
-        Player p3=new BotPlayer(new Hand());
-        Player p4=new BotPlayer(new Hand());
+
+        Player p1=new BotPlayer(new Hand(),1);
+        Player p2=new BotPlayer(new Hand(),2);
+        Player p3=new BotPlayer(new Hand(),3);
+        Player p4=new HumanPlayer(new Hand(),4);
 
         Deck deck = new Deck();
         deck.shuffleDeck();
+        dealCards(deck,p1,p2,p3,p4);
 
-System.out.println(deck.getDeckLinkedList().toString());
+
+
+        System.out.println(deck.getDeckLinkedList().toString1());
+        System.out.println(p1.getPlayerHand().getCardsInHand().toString1());
+        System.out.println(p2.getPlayerHand().getCardsInHand().toString1());
+        System.out.println(p3.getPlayerHand().getCardsInHand().toString1());
+        System.out.println(p4.getPlayerHand().getCardsInHand().toString1());
 
 
 /*   output template:
@@ -55,7 +63,7 @@ player won the game with bid: ... and score: ...
      * @param player
      */
     public void displayHand(Player player) {
-        player.getPlayerHand(player).getCardsInHand();
+        player.getPlayerHand().getCardsInHand();
     }
 
     /**
@@ -90,6 +98,37 @@ player won the game with bid: ... and score: ...
 
 
     public void isValidPlay() {
+
+    }
+
+    //adds a card to hand from deck
+    public static void addCard(Deck d, Player p){
+        Card tmp =d.getDeckLinkedList().getTail();
+        d.getDeckLinkedList().deleteLast();
+        p.getPlayerHand().getCardsInHand().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
+    }
+
+    /**
+     * method that deals all cards
+     * @param d
+     * @param p1
+     * @param p2
+     * @param p3
+     * @param p4
+     */
+    public static void dealCards(Deck d,Player p1,Player p2,Player p3,Player p4){
+        for(int i=0;i<13;i++){
+            addCard(d,p1);
+        }
+        for(int i=0;i<13;i++){
+            addCard(d,p2);
+        }
+        for(int i=0;i<13;i++){
+            addCard(d,p3);
+        }
+        for(int i=0;i<13;i++){
+            addCard(d,p4);
+        }
 
     }
 }
