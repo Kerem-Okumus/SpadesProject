@@ -115,8 +115,8 @@ public class LinkedList {
            }
 
            Card tmp1 =head;
-           while(tmp !=null){
-               if(tmp.getCardSuit()=="Spades"){
+           while(tmp1 !=null){
+               if(tmp1.getCardSuit()=="Spades"){
                    return tmp1;
                }
                tmp1=tmp1.getNextCard();

@@ -20,8 +20,11 @@ public class SpadesGame {
 
 
 
+        System.out.println("-------------------- P1 HAND --------------------");
         System.out.println(p1.getPlayerHand().getCardsInHand().toString());
+        System.out.println("-------------------- P2 HAND --------------------");
         System.out.println(p2.getPlayerHand().getCardsInHand().toString());
+        System.out.println("-------------------- P3 HAND --------------------");
         System.out.println(p3.getPlayerHand().getCardsInHand().toString());
         System.out.println();
 
@@ -29,11 +32,16 @@ public class SpadesGame {
         botPlay(p2,table);
         botPlay(p3,table);
 
+
+
+        System.out.println();
+        System.out.println("--------- CARDS ON TABLE ---------");
         System.out.println(table.getCardsOnTable().toString());
         System.out.println();
-        System.out.println(p1.getPlayerHand().getCardsInHand().toString());
-        System.out.println(p2.getPlayerHand().getCardsInHand().toString());
-        System.out.println(p3.getPlayerHand().getCardsInHand().toString());
+        //System.out.println(p1.getPlayerHand().getCardsInHand().toString());
+        //System.out.println(p2.getPlayerHand().getCardsInHand().toString());
+        //System.out.println(p3.getPlayerHand().getCardsInHand().toString());
+
 
 
 /*   output template:
@@ -74,26 +82,25 @@ player won the game with bid: ... and score: ...
             Random random=new Random();
             int indexOfCard = random.nextInt(initial);
             tmp = player.getPlayerHand().getCardsInHand().getNthCard(indexOfCard);
+            table.setOpeningCard(new Card(tmp.getCardSuit(),tmp.getCardValue()));
 
             if(indexOfCard==0){
                 player.getPlayerHand().getCardsInHand().deleteFirst();
                 table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
-                table.setOpeningCard(new Card(tmp.getCardSuit(),tmp.getCardValue()));
             }
             else if(indexOfCard !=initial-1){
                 player.getPlayerHand().getCardsInHand().deleteMiddle(player.getPlayerHand().getCardsInHand().getNthCard(indexOfCard));
                 table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
-                table.setOpeningCard(new Card(tmp.getCardSuit(),tmp.getCardValue()));
             }
             else{
                 player.getPlayerHand().getCardsInHand().deleteLast();
                 table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
-                table.setOpeningCard(new Card(tmp.getCardSuit(),tmp.getCardValue()));
             }
+            System.out.println("-player "+ player.getPlayerIndex()+" played "+tmp.getCardValue()+" of "+tmp.getCardSuit());
         }
         else{
-            tmp=table.getCardsOnTable().searchCard(table.getOpeningCard());
-            if(tmp==null){
+            tmp=player.getPlayerHand().getCardsInHand().searchCard(table.getOpeningCard());
+            if(player.getPlayerHand().getCardsInHand().searchCard(table.getOpeningCard())==null){
                 Random random=new Random();
                 int indexOfCard = random.nextInt(initial);
                 tmp = player.getPlayerHand().getCardsInHand().getNthCard(indexOfCard);
@@ -114,32 +121,30 @@ player won the game with bid: ... and score: ...
 
                 }
             } else {
-                int i = 0;
 
-                Card tmp1 = player.getPlayerHand().getCardsInHand().head;
+                for(int i = 0;i<initial;i++){
 
-                if (tmp1 == player.getPlayerHand().getCardsInHand().getNthCard(i)) {
+                if (tmp == player.getPlayerHand().getCardsInHand().getNthCard(i)) {
                     if (i == 0) {
                         player.getPlayerHand().getCardsInHand().deleteFirst();
-                        table.getCardsOnTable().insertLast(new Card(tmp1.getCardSuit(), tmp1.getCardValue()));
+                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue()));
 
                     } else if (i != initial - 1) {
                         player.getPlayerHand().getCardsInHand().deleteMiddle(player.getPlayerHand().getCardsInHand().getNthCard(i));
-                        table.getCardsOnTable().insertLast(new Card(tmp1.getCardSuit(), tmp1.getCardValue()));
+                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue()));
 
                     } else {
                         player.getPlayerHand().getCardsInHand().deleteLast();
-                        table.getCardsOnTable().insertLast(new Card(tmp1.getCardSuit(), tmp1.getCardValue()));
+                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue()));
 
                     }
-                } else {
-                    i++;
-
                 }
+                }
+                System.out.println("-player "+ player.getPlayerIndex()+" played "+tmp.getCardValue()+" of "+tmp.getCardSuit());
             }
         }
 
-
+    initial--;
 
 
 
