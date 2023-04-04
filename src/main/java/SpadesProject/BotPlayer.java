@@ -15,6 +15,15 @@ public class BotPlayer extends Player {
         super(hand, playerIndex);
     }
 
+    public int getRemainingCards() {
+        return remainingCards;
+    }
+
+    public void setRemainingCards(int remainingCards) {
+        this.remainingCards = remainingCards;
+    }
+
+
     public Card getSelectedCard() {
         return selectedCard;
     }

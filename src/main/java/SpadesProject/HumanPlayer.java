@@ -4,6 +4,7 @@ public class HumanPlayer extends Player {
 
 static Scanner input=new Scanner(System.in);
 
+
     protected int remainingCards=13;
     protected Card selectedCard;
 
@@ -23,18 +24,35 @@ static Scanner input=new Scanner(System.in);
         this.selectedCard = selectedCard;
     }
 
+
+    public int getRemainingCards() {
+        return remainingCards;
+    }
+
+    public void setRemainingCards(int remainingCards) {
+        this.remainingCards = remainingCards;
+    }
+
+    public boolean isValidIndex(int index){
+        if(index > getRemainingCards()-1 || index < 0){
+            return false;
+        }
+        return true;
+    }
+
     public void humanPlay(Table table){
 
         System.out.println("--------Your Current Hand--------");
-        System.out.println(getPlayerHand().getCardsInHand().toString());
+        System.out.println(getPlayerHand().getCardsInHand().handToString());
         System.out.println("It is your turn , enter the index of the card you want to play");
         int index=input.nextInt();
-        setSelectedCard(getPlayerHand().getCardsInHand().getNthCard(index));
-       /* try {
-            setSelectedCard(getPlayerHand().getCardsInHand().getNthCard(index));
-        }catch (IndexOutOfBoundsException) {
+        while(isValidIndex(index)==false) {
+
             System.out.println("please enter a valid index");
-        }*/
+            index=input.nextInt();
+
+        }
+        setSelectedCard(getPlayerHand().getCardsInHand().getNthCard(index));
         isValidPlay(table);
 
         while(isValidPlay(table)==false){

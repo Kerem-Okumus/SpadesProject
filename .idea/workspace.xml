@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680559644511</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="13 rounds can be simulated correctly, modified some methods, started to working on the integer values of the cards and round winning logic">
+      <created>1680613668884</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1680613668884</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

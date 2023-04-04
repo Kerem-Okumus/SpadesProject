@@ -113,6 +113,13 @@ public class LinkedList {
            tmp = head;
            while (tmp != null){
                if (tmp.getCardSuit() == openingCard.getCardSuit()) {
+                   Card tmp2=head;
+                   while(tmp2 != null){
+                       if(tmp2.getCardSuit()==tmp.getCardSuit() && tmp2.getIntValue() > tmp.getIntValue()){
+                           tmp=tmp2;
+                       }
+                       tmp2=tmp2.getNextCard();
+                   }
                    return tmp;
                }
                tmp = tmp.getNextCard();
@@ -151,23 +158,36 @@ public class LinkedList {
          return null;
      }
 
+    public int cardCount(){
+        int count = 0;
+        Card tmp;
+        tmp = head;
+        while (tmp != null){
+            tmp = tmp.getNextCard();
+            count++;
+        }
+        return count;
+    }
+
      public String toString(){
          String res= "";
          Card tmp =head;
          while(tmp !=null){
-             res =res +tmp.toString()+" ";
+             res =res +"( "+tmp.toString()+")"+" ";
              tmp=tmp.getNextCard();
          }
          return res;
      }
 
       public String handToString(){
+         int totalCards=cardCount();
          int i=0;
           String res= "";
           Card tmp =head;
           while(tmp !=null){
-              res =res +tmp.toString()+" ";
+              res =res +i+"-("+tmp.toString()+") , ";
               tmp=tmp.getNextCard();
+              i++;
           }
           return res;
       }

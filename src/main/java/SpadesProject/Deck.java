@@ -18,7 +18,11 @@ private LinkedList cardsInDeck =new LinkedList();
 
            for(int i=0;i<suits.length;i++){
                 for(int j=0;j<values.length;j++){
-                    newCard =new Card(suits[i],values[j],j+2);
+                    if(i==2){
+                        newCard =new Card(suits[i],values[j],j+15);
+                    }else {
+                        newCard = new Card(suits[i], values[j], j + 2);
+                    }
                           cardsInDeck.insertLast(newCard);
                          if(j>0) {
                              tmp.setNextCard(newCard);

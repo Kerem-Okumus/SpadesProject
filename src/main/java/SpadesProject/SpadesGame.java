@@ -16,31 +16,10 @@ public class SpadesGame {
         Deck deck=new Deck();
         Table table=new Table();
 
-        setGame(p1,p2,p3,p4,deck,table);
-        playRound(p1,p2,p3,p4,deck,table);
-
-
-      /*  System.out.println("-------------------- P1 HAND --------------------");
-        System.out.println(p1.getPlayerHand().getCardsInHand().toString());
-        System.out.println("-------------------- P2 HAND --------------------");
-        System.out.println(p2.getPlayerHand().getCardsInHand().toString());
-        System.out.println("-------------------- P3 HAND --------------------");
-        System.out.println(p3.getPlayerHand().getCardsInHand().toString());
-        System.out.println();*/
+        playGame(p1,p2,p3,p4,deck,table);
 
 
 
-
-
-       /* System.out.println();
-        System.out.println("--------- CARDS ON TABLE ---------");
-        System.out.println(table.getCardsOnTable().toString());
-        System.out.println();*/
-
-
-        //System.out.println(p1.getPlayerHand().getCardsInHand().toString());
-        //System.out.println(p2.getPlayerHand().getCardsInHand().toString());
-        //System.out.println(p3.getPlayerHand().getCardsInHand().toString());
 
 
 
@@ -70,7 +49,14 @@ player won the game with bid: ... and score: ...
 
     }
 
+    public static void playGame(BotPlayer p1,BotPlayer p2,BotPlayer p3,HumanPlayer p4,Deck deck,Table table){
+        while(isGameOver(p1,p2,p3,p4)==false) {
+            setGame(p1, p2, p3, p4, deck, table);
+            playRound(p1, p2, p3, p4, deck, table);
+        }
+        System.out.println(" GAME OVER ");
 
+    }
 
     /**
      * // the method that creates deck and the players , shuffles the deck and deals the cards
@@ -85,7 +71,7 @@ Scanner input=new Scanner(System.in);
         System.out.println("Cards have been dealt...");
         System.out.println("----------GAME STARTED----------\n");
 
-        System.out.println("-----Your Hand-----\n"+p4.getPlayerHand().getCardsInHand().toString());
+        System.out.println("-----Your Hand-----\n"+p4.getPlayerHand().getCardsInHand().handToString());
 
         setBids(p1,p2,p3,p4);
 
@@ -116,14 +102,16 @@ Scanner input=new Scanner(System.in);
 
         System.out.print("Please enter your bid here:");
         int bid=input.nextInt();
-        p4.setBid(bid);
+        p4.isValidBid(bid);
+            p4.setBid(bid);
 
         System.out.println("Bids have set, p1:"+p1.getBid()+" ,p2:"+p2.getBid()+" ,p3:"+p3.getBid()+" ,you:"+p4.getBid()+"\n");
 
     }
 
     /**
-     * method that simulates 1 round
+     * method that simulates 13 rounds
+     * @param p1,p2,p3,p4,deck,table
      */
     public static void playRound(BotPlayer p1,BotPlayer p2,BotPlayer p3,HumanPlayer p4,Deck deck,Table table) {
         for(int i=1;i<14;i++) {
@@ -143,6 +131,21 @@ Scanner input=new Scanner(System.in);
                 table.getCardsOnTable().deleteFirst();
 
         }
+        givePoints(p1);
+        givePoints(p2);
+        givePoints(p3);
+        givePoints(p4);
+
+        displayScores(p1,p2,p3,p4);
+
+        p1.setRemainingCards(13);
+        p2.setRemainingCards(13);
+        p3.setRemainingCards(13);
+        p4.setRemainingCards(13);
+    }
+
+    public static void displayScores(BotPlayer p1,BotPlayer p2,BotPlayer p3,HumanPlayer p4){
+        System.out.println("Total Scores ----->  P1 : "+p1.getTotalScore()+" ,P2 : "+p2.getTotalScore()+" ,P3 : "+p3.getTotalScore()+" YOU : "+p4.getTotalScore());
     }
 
     public static void determineRoundWinner(BotPlayer p1,BotPlayer p2,BotPlayer p3,HumanPlayer p4,Table table ){
@@ -159,12 +162,27 @@ Scanner input=new Scanner(System.in);
                     System.out.println("test2 "+winnerCard.toString());
                 }
             }
-            if(winnerCard.toString().equals(p1.selectedCard.toString())){p1.increaseTrickCount();System.out.println("-Player 1 won the round ");}
-            else if(winnerCard.toString().equals(p2.selectedCard.toString())){p2.increaseTrickCount();System.out.println("-Player 2 won the round ");}
-            else if(winnerCard.toString().equals(p3.selectedCard.toString())){p3.increaseTrickCount();System.out.println("-Player 3 won the round ");}
-            else if(winnerCard.toString().equals(p4.selectedCard.toString())){p4.increaseTrickCount();System.out.println("-You won the round ");}
-            System.out.println(" Trick points are --> p1 : "+p1.getTrickCount()+" ,p2 : "+p2.getTrickCount()+" ,p3 : "+p3.getTrickCount()+" ,YOU : "+p4.getTrickCount());
+
+        }else {
+            if(p1.getSelectedCard().getCardSuit() != "Spades" && p2.getSelectedCard().getCardSuit() != "Spades" && p3.getSelectedCard().getCardSuit() != "Spades" && p4.getSelectedCard().getCardSuit() != "Spades"){
+                winnerCard=p1.getSelectedCard();
+            }
+            else{
+                for(int i=0;i<3;i++){
+                    Card tmp=table.getCardsOnTable().getNthCard(i);
+                        if(tmp.getCardSuit()=="Spades" && tmp.getIntValue()>winnerCard.getIntValue()){
+                            winnerCard=tmp;
+                        }
+                }
+            }
+
         }
+
+        if(winnerCard.toString().equals(p1.selectedCard.toString())){p1.increaseTrickCount();System.out.println("-Player 1 won the round ");}
+        else if(winnerCard.toString().equals(p2.selectedCard.toString())){p2.increaseTrickCount();System.out.println("-Player 2 won the round ");}
+        else if(winnerCard.toString().equals(p3.selectedCard.toString())){p3.increaseTrickCount();System.out.println("-Player 3 won the round ");}
+        else if(winnerCard.toString().equals(p4.selectedCard.toString())){p4.increaseTrickCount();System.out.println("-You won the round ");}
+        System.out.println(" Trick points are --> p1 : "+p1.getTrickCount()+" ,p2 : "+p2.getTrickCount()+" ,p3 : "+p3.getTrickCount()+" ,YOU : "+p4.getTrickCount());
 
 
 
@@ -172,19 +190,28 @@ Scanner input=new Scanner(System.in);
     /**
      * method that checks whether a player won the game or not
      */
-    public void isGameOver() {
+    public static boolean isGameOver(BotPlayer p1,BotPlayer p2,BotPlayer p3,HumanPlayer p4) {
+        int winningScore=500;
+        if(p1.getTotalScore() >= winningScore){System.out.println("****** P1 WON THE GAME ******");return true;}
+        if(p2.getTotalScore() >= winningScore){System.out.println("****** P2 WON THE GAME ******");return true;}
+        if(p3.getTotalScore() >= winningScore){System.out.println("****** P3 WON THE GAME ******");return true;}
+        if(p4.getTotalScore() >= winningScore){System.out.println("****** YOU WON THE GAME ******");return true;}
+        return false;
     }
 
-    /**
-     * method that sets first suit so that game will be continue according to the first card
-     */
-    public void determineSuitOfRound() {
-    }
+
 
     /**
      * method that gives points to players according to the rules
      */
-    public void givePoints() {
+    public static void givePoints(Player player) {
+        int bid=player.getBid();
+        if(bid <= player.getTrickCount()){
+            player.setTotalScore(player.getTotalScore()+bid*10 +(player.getTrickCount()-bid));
+        }
+        if(player.getTrickCount() < player.getBid()){
+            player.setTotalScore(player.getTotalScore()-bid*10);
+        }
     }
 
 

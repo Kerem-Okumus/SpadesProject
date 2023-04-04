@@ -62,6 +62,14 @@ public class Player {
         this.totalScore = totalScore;
     }
 
+    public boolean isValidBid(int bid){
+        if(bid<0 || bid >13){
+            System.out.println("please enter a valid bid !");
+            return false;
+        }
+        return true;
+    }
+
 }
 
 
