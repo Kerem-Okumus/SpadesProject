@@ -5,6 +5,7 @@ public class Card {
     private final String suit;
     private final String value;
     private Card nextCard;
+    protected int intValue;
 
     /**
      * @param suit
@@ -19,9 +20,10 @@ public class Card {
 
     }
 
-    public Card(String suit, String value) {
+    public Card(String suit, String value ,int intValue) {
         this.suit = suit;
         this.value = value;
+        this.intValue=intValue;
     }
 
     /**
@@ -39,6 +41,13 @@ public class Card {
         this.nextCard=next;
     }
 
+    public int getIntValue() {
+        return intValue;
+    }
+
+    public void setIntValue(int intValue) {
+        this.intValue = intValue;
+    }
 
     // the method that specify the values of the cards. for ex: ace=14 , jack=11 etc. (Switch)
     public void matchValues(){

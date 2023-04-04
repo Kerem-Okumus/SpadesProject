@@ -51,15 +51,15 @@ static Scanner input=new Scanner(System.in);
                 if (tmp == getPlayerHand().getCardsInHand().getNthCard(i)) {
                     if (i == 0) {
                         getPlayerHand().getCardsInHand().deleteFirst();
-                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue()));
+                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue(),tmp.getIntValue()));
 
                     } else if (i != remainingCards - 1) {
                         getPlayerHand().getCardsInHand().deleteMiddle(getPlayerHand().getCardsInHand().getNthCard(i));
-                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue()));
+                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue(),tmp.getIntValue()));
 
                     } else {
                         getPlayerHand().getCardsInHand().deleteLast();
-                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue()));
+                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue(),tmp.getIntValue()));
 
                     }
                 }

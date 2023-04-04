@@ -19,7 +19,7 @@ public class LinkedList {
     }
 
     public Card getPreviousCard(Card card){
-       /* if (card == head) {
+        if (card == head) {
             return head;
         }
         Card tmp = head;
@@ -31,14 +31,14 @@ public class LinkedList {
             }
             tmp = tmp.getNextCard();
         }
-        return previous;*/
-     Card tmp=head;
+        return previous;
+    /* Card tmp=head;
      Card previousCard =null;
      while(tmp!= card){
          previousCard =tmp;
          tmp= tmp.getNextCard();
      }
-     return previousCard;
+     return previousCard;*/
     }
 
     public void insertFirst(Card newCard){
@@ -91,10 +91,14 @@ public class LinkedList {
 
 //will be used to play card (removing from hand and deck )
      public void deleteLast(){
+
      tail= getPreviousCard(tail);
      if(tail != null){
          tail.setNextCard(null);
-     }else{
+
+     }
+     else{
+
          head=null;
      }
          }
@@ -143,6 +147,7 @@ public class LinkedList {
              index++;
              tmp = tmp.getNextCard();
          }
+
          return null;
      }
 

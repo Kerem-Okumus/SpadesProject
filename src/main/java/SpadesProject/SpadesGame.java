@@ -9,15 +9,15 @@ public class SpadesGame {
     public static void main(String[] args) {
         Random random=new Random();
 
-        Player p1=new BotPlayer(new Hand(),1);
-        Player p2=new BotPlayer(new Hand(),2);
-        Player p3=new BotPlayer(new Hand(),3);
+        BotPlayer p1=new BotPlayer(new Hand(),1);
+        BotPlayer p2=new BotPlayer(new Hand(),2);
+        BotPlayer p3=new BotPlayer(new Hand(),3);
         HumanPlayer p4=new HumanPlayer(new Hand(),4);
         Deck deck=new Deck();
         Table table=new Table();
 
         setGame(p1,p2,p3,p4,deck,table);
-        playRound(p1,p2,p3,p4,table);
+        playRound(p1,p2,p3,p4,deck,table);
 
 
       /*  System.out.println("-------------------- P1 HAND --------------------");
@@ -70,85 +70,7 @@ player won the game with bid: ... and score: ...
 
     }
 
-    /**
-     * playing logic for bots
-     * @param player
-     * @param table
-     */
-    public static void botPlay(Player player,Table table){
-        Card tmp;
-        int initial=13;
-        if(player.getPlayerIndex()==1){
-            Random random=new Random();
-            int indexOfCard = random.nextInt(initial);
-            tmp = player.getPlayerHand().getCardsInHand().getNthCard(indexOfCard);
-            table.setOpeningCard(new Card(tmp.getCardSuit(),tmp.getCardValue()));
 
-            if(indexOfCard==0){
-                player.getPlayerHand().getCardsInHand().deleteFirst();
-                table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
-            }
-            else if(indexOfCard !=initial-1){
-                player.getPlayerHand().getCardsInHand().deleteMiddle(player.getPlayerHand().getCardsInHand().getNthCard(indexOfCard));
-                table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
-            }
-            else{
-                player.getPlayerHand().getCardsInHand().deleteLast();
-                table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
-            }
-            System.out.println("-player "+ player.getPlayerIndex()+" played "+tmp.getCardValue()+" of "+tmp.getCardSuit());
-        }
-        else{
-            tmp=player.getPlayerHand().getCardsInHand().searchCard(table.getOpeningCard());
-            if(player.getPlayerHand().getCardsInHand().searchCard(table.getOpeningCard())==null){
-                Random random=new Random();
-                int indexOfCard = random.nextInt(initial);
-                tmp = player.getPlayerHand().getCardsInHand().getNthCard(indexOfCard);
-
-                if(indexOfCard==0){
-                    player.getPlayerHand().getCardsInHand().deleteFirst();
-                    table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
-
-                }
-                else if(indexOfCard !=initial-1){
-                    player.getPlayerHand().getCardsInHand().deleteMiddle(player.getPlayerHand().getCardsInHand().getNthCard(indexOfCard));
-                    table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
-
-                }
-                else{
-                    player.getPlayerHand().getCardsInHand().deleteLast();
-                    table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
-
-                }
-            } else {
-
-                for(int i = 0;i<initial;i++){
-
-                if (tmp == player.getPlayerHand().getCardsInHand().getNthCard(i)) {
-                    if (i == 0) {
-                        player.getPlayerHand().getCardsInHand().deleteFirst();
-                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue()));
-
-                    } else if (i != initial - 1) {
-                        player.getPlayerHand().getCardsInHand().deleteMiddle(player.getPlayerHand().getCardsInHand().getNthCard(i));
-                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue()));
-
-                    } else {
-                        player.getPlayerHand().getCardsInHand().deleteLast();
-                        table.getCardsOnTable().insertLast(new Card(tmp.getCardSuit(), tmp.getCardValue()));
-
-                    }
-                }
-                }
-                System.out.println("-player "+ player.getPlayerIndex()+" played "+tmp.getCardValue()+" of "+tmp.getCardSuit());
-            }
-        }
-
-    initial--;
-
-
-
-    }
 
     /**
      * // the method that creates deck and the players , shuffles the deck and deals the cards
@@ -161,7 +83,7 @@ Scanner input=new Scanner(System.in);
         System.out.println("The deck has been created...");
         System.out.println("The deck has been shuffled...");
         System.out.println("Cards have been dealt...");
-        System.out.println("----------GAME STARTED----------\n\n\n");
+        System.out.println("----------GAME STARTED----------\n");
 
         System.out.println("-----Your Hand-----\n"+p4.getPlayerHand().getCardsInHand().toString());
 
@@ -201,22 +123,52 @@ Scanner input=new Scanner(System.in);
     }
 
     /**
-     * method that determines the winner of the round and gives 1 trick point to the winner of the round
+     * method that simulates 1 round
      */
-    public static void playRound(Player p1,Player p2,Player p3,HumanPlayer p4,Table table) {
+    public static void playRound(BotPlayer p1,BotPlayer p2,BotPlayer p3,HumanPlayer p4,Deck deck,Table table) {
         for(int i=1;i<14;i++) {
-            System.out.println("------------------------------ROUND "+i+"------------------------------");
-            botPlay(p1, table);
-            botPlay(p2, table);
-            botPlay(p3, table);
+            System.out.println("------------------------------ROUND "+i+"------------------------------\n");
+
+            p1.botPlay(table);
+            p2.botPlay(table);
+            p3.botPlay(table);
             p4.humanPlay(table);
-            System.out.println("Player x won the round "+i);
-                for(int j=0;j<4;j++){
+            determineRoundWinner(p1,p2, p3, p4, table);
+                for(int j=3;j>=0;j--){
+                    Card tmp=table.getCardsOnTable().getNthCard(j);
                     table.getCardsOnTable().deleteLast();
+
+                    deck.getDeckLinkedList().insertLast(new Card(tmp.getCardValue(),tmp.getCardSuit(),tmp.getIntValue()));
                 }
+                table.getCardsOnTable().deleteFirst();
+
         }
     }
 
+    public static void determineRoundWinner(BotPlayer p1,BotPlayer p2,BotPlayer p3,HumanPlayer p4,Table table ){
+        Card winnerCard=table.getCardsOnTable().getTail();
+
+        if(p1.selectedCard.getCardSuit()==p2.selectedCard.getCardSuit() && p2.selectedCard.getCardSuit()==p3.selectedCard.getCardSuit() && p3.selectedCard.getCardSuit()==p4.selectedCard.getCardSuit()){
+            System.out.println(table.getCardsOnTable().toString());
+            System.out.println(p4.getSelectedCard().toString());
+            for(int i=0;i<3;i++){
+                Card tmp= table.getCardsOnTable().getNthCard(i);
+
+                if(tmp.getIntValue() > winnerCard.getIntValue()){
+                    winnerCard=tmp;
+                    System.out.println("test2 "+winnerCard.toString());
+                }
+            }
+            if(winnerCard.toString().equals(p1.selectedCard.toString())){p1.increaseTrickCount();System.out.println("-Player 1 won the round ");}
+            else if(winnerCard.toString().equals(p2.selectedCard.toString())){p2.increaseTrickCount();System.out.println("-Player 2 won the round ");}
+            else if(winnerCard.toString().equals(p3.selectedCard.toString())){p3.increaseTrickCount();System.out.println("-Player 3 won the round ");}
+            else if(winnerCard.toString().equals(p4.selectedCard.toString())){p4.increaseTrickCount();System.out.println("-You won the round ");}
+            System.out.println(" Trick points are --> p1 : "+p1.getTrickCount()+" ,p2 : "+p2.getTrickCount()+" ,p3 : "+p3.getTrickCount()+" ,YOU : "+p4.getTrickCount());
+        }
+
+
+
+    }
     /**
      * method that checks whether a player won the game or not
      */
@@ -251,7 +203,7 @@ Scanner input=new Scanner(System.in);
     public static void addCard(Deck deck, Player player){
         Card tmp =deck.getDeckLinkedList().getTail();
         deck.getDeckLinkedList().deleteLast();
-        player.getPlayerHand().getCardsInHand().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue()));
+        player.getPlayerHand().getCardsInHand().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue(),tmp.getIntValue()));
     }
 
     /**
@@ -275,6 +227,7 @@ Scanner input=new Scanner(System.in);
         for(int i=0;i<13;i++){
             addCard(deck,p4);
         }
+        deck.getDeckLinkedList().deleteFirst();
 
     }
 }
