@@ -2,17 +2,16 @@ package SpadesProject;
 
 public class Card {
 
-    private final String suit;
-    private final String value;
+    private final String suit; //suit of the card SPADES ,DIAMONDS ,CLUBS ,HEARTS
+    private final String value; //values of the cards 2 to 14
     private Card nextCard;
-    protected int intValue;
+    protected int intValue;  //integer value of the cards
 
     /**
      * @param suit
      * @param value
      * @param nextCard
      */
-
     public Card(String suit, String value, Card nextCard){
         this.suit=suit;
         this.value=value;
@@ -20,6 +19,12 @@ public class Card {
 
     }
 
+    /**
+     *
+     * @param suit
+     * @param value
+     * @param intValue
+     */
     public Card(String suit, String value ,int intValue) {
         this.suit = suit;
         this.value = value;
@@ -49,11 +54,6 @@ public class Card {
         this.intValue = intValue;
     }
 
-    // the method that specify the values of the cards. for ex: ace=14 , jack=11 etc. (Switch)
-    public void matchValues(){
-
-    }
-
     /**
      *
      * @return
@@ -70,8 +70,11 @@ public class Card {
         return value;
     }
 
+    /**
+     * Card to string
+     * @return
+     */
     public String toString(){
-
         return  value+" of "+suit+"";
 }
 

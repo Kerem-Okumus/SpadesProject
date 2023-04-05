@@ -1,16 +1,9 @@
 package SpadesProject;
 
-import SpadesProject.LinkedList;
-
 public class Table {
 
-    protected static Card openingCard;
+    protected static Card openingCard;  //the first card played to the table each round
     private LinkedList cardsOnTable= new LinkedList();
-
-    /**
-     * method that collect 4 cards from each players hand
-     */
-    public void addCardsToTable(){}
 
 
     public LinkedList getCardsOnTable(){

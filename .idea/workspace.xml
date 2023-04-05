@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="13 rounds can be simulated correctly, modified some methods, started to working on the integer values of the cards and round winning logic">
+    <list default="true" id="a9df2269-e95f-4963-b95e-c97057b01889" name="Changes" comment="assigned values to the cards , winner of the round can be determined, trick points and total points can be arranged, handled some exceptions, the game is nearly completed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/BotPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/BotPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Hand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/HumanPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/LinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/SpadesGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SpadesProject/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SpadesProject/Table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680613668884</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="assigned values to the cards , winner of the round can be determined, trick points and total points can be arranged, handled some exceptions, the game is nearly completed.">
+      <created>1680649710225</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680649710225</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -256,7 +265,8 @@
     <MESSAGE value="search method and playing logic for bots completed (except quantities of the cards for now)" />
     <MESSAGE value="Human player can now play cards, all the requirements for the round loop have been completed ,round winning logic and the point system is left" />
     <MESSAGE value="13 rounds can be simulated correctly, modified some methods, started to working on the integer values of the cards and round winning logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="13 rounds can be simulated correctly, modified some methods, started to working on the integer values of the cards and round winning logic" />
+    <MESSAGE value="assigned values to the cards , winner of the round can be determined, trick points and total points can be arranged, handled some exceptions, the game is nearly completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="assigned values to the cards , winner of the round can be determined, trick points and total points can be arranged, handled some exceptions, the game is nearly completed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

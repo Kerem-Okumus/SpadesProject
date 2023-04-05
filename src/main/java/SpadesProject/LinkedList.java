@@ -1,13 +1,13 @@
 package SpadesProject;
 
-import SpadesProject.Card;
-import SpadesProject.Hand;
-
 public class LinkedList {
 
     protected Card head;
     protected Card tail;
 
+    /**
+     * const of the linkedlist
+     */
  public LinkedList(){
     head= null;
     tail=null;
@@ -18,6 +18,11 @@ public class LinkedList {
         return tail;
     }
 
+    /**
+     * method that gets selected card and returns the previous card (used in deleteMiddle() and insertMiddle())
+     * @param card
+     * @return
+     */
     public Card getPreviousCard(Card card){
         if (card == head) {
             return head;
@@ -32,15 +37,12 @@ public class LinkedList {
             tmp = tmp.getNextCard();
         }
         return previous;
-    /* Card tmp=head;
-     Card previousCard =null;
-     while(tmp!= card){
-         previousCard =tmp;
-         tmp= tmp.getNextCard();
-     }
-     return previousCard;*/
     }
 
+    /**
+     * method that uset to add cards to hand, deck and table (also used in shuffling)
+     * @param newCard
+     */
     public void insertFirst(Card newCard){
         if (head == null) {
 
@@ -50,7 +52,10 @@ public class LinkedList {
         head = newCard;
     }
 
-//will be used when creating the deck and hands
+    /**
+     * method that uset to add cards to hand, deck and table (also used in shuffling)
+     * @param newCard
+     */
      public void insertLast(Card newCard) {
      if(head==null){
          head=newCard;
@@ -62,7 +67,9 @@ public class LinkedList {
      }
 
 
-//will be used to play card (removing from hand )
+    /**
+     * method used in shuffling cards
+     */
      public void deleteFirst(){
      head=head.getNextCard();
          if(head==null){
@@ -71,7 +78,10 @@ public class LinkedList {
  }
 
 
-//will be used to play card (removing from hand )
+    /**
+     * method used in shuffling cards
+     * @param card
+     */
      public void deleteMiddle(Card card){
      Card previous;
      previous = getPreviousCard(card);
@@ -79,36 +89,37 @@ public class LinkedList {
 
          }
 
-     public void deleteCard(Card card){
 
-     }
-
+    /**
+     * method used in shuffling cards
+     * @param newCard
+     * @param previous
+     */
      public void insertMiddle(Card newCard, Card previous){
      newCard.setNextCard(previous.getNextCard());
      previous.setNextCard(newCard);
      }
 
 
-//will be used to play card (removing from hand and deck )
+    /**
+     * used to play card (removing from hand ,table and deck )
+     */
      public void deleteLast(){
-
      tail= getPreviousCard(tail);
      if(tail != null){
          tail.setNextCard(null);
-
      }
      else{
-
          head=null;
      }
          }
 
     /**
-     *
+     *The method that searches a card for bots from their hand to make a valid play
      * @param openingCard
      * @return
      */
-       public Card searchCard(Card openingCard){     //search a card for bots from their hand to make a valid play
+       public Card searchCard(Card openingCard){
            Card tmp;
            tmp = head;
            while (tmp != null){
@@ -128,19 +139,22 @@ public class LinkedList {
            Card tmp1 =head;
            while(tmp1 !=null){
                if(tmp1.getCardSuit()=="Spades"){
+                   Card tmp2=head;
+                   while(tmp2 != null){
+                       if(tmp2.getCardSuit()==tmp1.getCardSuit() && tmp2.getIntValue() < tmp1.getIntValue()){
+                           tmp1=tmp2;
+                       }
+                       tmp2=tmp2.getNextCard();
+                   }
                    return tmp1;
                }
                tmp1=tmp1.getNextCard();
            }
-
-
      return null;
     }
 
-
-
     /**
-     *
+     *method that returns nth index of the card in linkedlist
      * @param n
      * @return
      */
@@ -158,6 +172,10 @@ public class LinkedList {
          return null;
      }
 
+    /**
+     * method that returns the number of the cards in the hand ,deck and table
+     * @return
+     */
     public int cardCount(){
         int count = 0;
         Card tmp;
@@ -169,6 +187,10 @@ public class LinkedList {
         return count;
     }
 
+    /**
+     * method that returns cards on the deck and the table
+     * @return
+     */
      public String toString(){
          String res= "";
          Card tmp =head;
@@ -179,6 +201,10 @@ public class LinkedList {
          return res;
      }
 
+    /**
+     * method that return players hands with numbers near them ( to select index when playing
+     * @return
+     */
       public String handToString(){
          int totalCards=cardCount();
          int i=0;

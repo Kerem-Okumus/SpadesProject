@@ -9,7 +9,7 @@ public class Player {
     private int totalScore;
 
     /**
-     *
+     *constructor of the Player
      * @param hand
      */
     public Player(Hand hand, int playerIndex){
@@ -18,9 +18,6 @@ public class Player {
          this.playerIndex=playerIndex;
          totalScore=0;
 }
-
-
-
 
      public void setBid(int i){
         bid=i;

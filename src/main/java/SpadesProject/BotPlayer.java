@@ -1,13 +1,13 @@
 package SpadesProject;
 import java.util.Random;
+
 public class BotPlayer extends Player {
 
-    static Random random=new Random();
-
-    protected int remainingCards=13;
-    protected Card selectedCard;
+    protected int remainingCards=13; //remaining cards number at the end of the round in hand
+    protected Card selectedCard; //the card that player has selected to play
 
     /**
+     * constructor of the BotPlayer
      * @param hand
      * @param playerIndex
      */
@@ -32,6 +32,10 @@ public class BotPlayer extends Player {
         this.selectedCard = selectedCard;
     }
 
+    /**
+     * bots are playing cards according to this method, it includes playing logic and also searchValidCard() method
+     * @param table
+     */
     public void botPlay(Table table){
         Card tmp;
 

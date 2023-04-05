@@ -5,10 +5,11 @@ public class HumanPlayer extends Player {
 static Scanner input=new Scanner(System.in);
 
 
-    protected int remainingCards=13;
-    protected Card selectedCard;
+    protected int remainingCards=13; //remaining cards number at the end of the round in hand
+    protected Card selectedCard; //the card that player has selected to play
 
     /**
+     * Constructor of the HumanPlayer
      * @param hand
      * @param playerIndex
      */
@@ -33,6 +34,11 @@ static Scanner input=new Scanner(System.in);
         this.remainingCards = remainingCards;
     }
 
+    /**
+     * method that checks whether the index is valid or not (used in getting card index and bid number)
+     * @param index
+     * @return
+     */
     public boolean isValidIndex(int index){
         if(index > getRemainingCards()-1 || index < 0){
             return false;
@@ -40,6 +46,10 @@ static Scanner input=new Scanner(System.in);
         return true;
     }
 
+    /**
+     * method allows player to make plays if it is valid
+     * @param table
+     */
     public void humanPlay(Table table){
 
         System.out.println("--------Your Current Hand--------");
@@ -99,7 +109,7 @@ static Scanner input=new Scanner(System.in);
         if(getPlayerHand().getCardsInHand().searchCard(table.getOpeningCard())==null){
             return true;
         }
-        if(tmp==getPlayerHand().getCardsInHand().searchCard(table.getOpeningCard())){
+        if(getPlayerHand().getCardsInHand().searchCard(table.getOpeningCard()) != null  && getSelectedCard().getCardSuit()=="Spades"){
             return true;
         }
         return false;

@@ -1,80 +1,65 @@
 package SpadesProject;
 
-import SpadesProject.Hand;
 import java.util.Random;
 import java.util.Scanner;
 
 public class SpadesGame {
 
     public static void main(String[] args) {
-        Random random=new Random();
 
         BotPlayer p1=new BotPlayer(new Hand(),1);
         BotPlayer p2=new BotPlayer(new Hand(),2);
         BotPlayer p3=new BotPlayer(new Hand(),3);
         HumanPlayer p4=new HumanPlayer(new Hand(),4);
+
         Deck deck=new Deck();
         Table table=new Table();
 
         playGame(p1,p2,p3,p4,deck,table);
 
-
-
-
-
-
-/*   output template:
-
-(at the beginning)
--deck has been created
--deck has been shuffled
--cards have been dealt
--game has started
--your hand = 1-(2ofDiamonds) ,2-(queenOfHearts) ... etc.
--what is your bid?
--bits have set : player(3) ,bot1(4) ,bot2(2) ,bot3(2)
-
-(each turn)
--your current hand: 1-(2ofDiamonds) ,2-(queenOfHearts) ... etc.
--please select a card to play (enter the index of it)
--you played .... , bot1 played .... ,bot2 played ..... and bot3 played ....
--..... won the round (n)
--score table :player(1) ,bot1(0 ... etc.
-
-
-(at the end of the game)
-player won the game with bid: ... and score: ...
- */
-
-
     }
 
+    /**
+     * Method that continues the game if no one reaches the target score
+     * @param p1
+     * @param p2
+     * @param p3
+     * @param p4
+     * @param deck
+     * @param table
+     */
     public static void playGame(BotPlayer p1,BotPlayer p2,BotPlayer p3,HumanPlayer p4,Deck deck,Table table){
+        System.out.println("The deck has been created...");
         while(isGameOver(p1,p2,p3,p4)==false) {
             setGame(p1, p2, p3, p4, deck, table);
+            System.out.println("----------GAME STARTED----------\n");
+
             playRound(p1, p2, p3, p4, deck, table);
+            System.out.println("---------------------------------------------");
+            System.out.println("13 Rounds are over, no one have reached the target score , continuing the game");
+            System.out.println("---------------------------------------------");
         }
         System.out.println(" GAME OVER ");
-
     }
 
     /**
      * // the method that creates deck and the players , shuffles the deck and deals the cards
      */
     public static void setGame(Player p1,Player p2,Player p3,HumanPlayer p4,Deck deck,Table table) {
-Scanner input=new Scanner(System.in);
+
+        deck.shuffleDeck();
+        deck.shuffleDeck();
         deck.shuffleDeck();
         dealCards(deck,p1,p2,p3,p4);
 
-        System.out.println("The deck has been created...");
+
         System.out.println("The deck has been shuffled...");
         System.out.println("Cards have been dealt...");
-        System.out.println("----------GAME STARTED----------\n");
+
 
         System.out.println("-----Your Hand-----\n"+p4.getPlayerHand().getCardsInHand().handToString());
 
         setBids(p1,p2,p3,p4);
-
     }
 
     /**
@@ -82,8 +67,8 @@ Scanner input=new Scanner(System.in);
      *
      * @param player
      */
-    public void displayHand(Player player) {
-       System.out.println(player.getPlayerHand().getCardsInHand().toString());
+    public static void displayHand(Player player) {
+        System.out.println(player.getPlayerHand().getCardsInHand().handToString());
     }
 
     /**
@@ -101,8 +86,13 @@ Scanner input=new Scanner(System.in);
         p3.setBid(bid3);
 
         System.out.print("Please enter your bid here:");
-        int bid=input.nextInt();
-        p4.isValidBid(bid);
+
+        int bid = input.nextInt();
+
+        while(p4.isValidBid(bid)==false){
+            System.out.print("Please enter a valid bid (0-13) :");
+            bid=input.nextInt();
+        }
             p4.setBid(bid);
 
         System.out.println("Bids have set, p1:"+p1.getBid()+" ,p2:"+p2.getBid()+" ,p3:"+p3.getBid()+" ,you:"+p4.getBid()+"\n");
@@ -114,6 +104,7 @@ Scanner input=new Scanner(System.in);
      * @param p1,p2,p3,p4,deck,table
      */
     public static void playRound(BotPlayer p1,BotPlayer p2,BotPlayer p3,HumanPlayer p4,Deck deck,Table table) {
+
         for(int i=1;i<14;i++) {
             System.out.println("------------------------------ROUND "+i+"------------------------------\n");
 
@@ -121,12 +112,14 @@ Scanner input=new Scanner(System.in);
             p2.botPlay(table);
             p3.botPlay(table);
             p4.humanPlay(table);
+            System.out.println("------CARDS ON TABLE------");
+            System.out.println(table.getCardsOnTable().toString());
             determineRoundWinner(p1,p2, p3, p4, table);
                 for(int j=3;j>=0;j--){
                     Card tmp=table.getCardsOnTable().getNthCard(j);
                     table.getCardsOnTable().deleteLast();
 
-                    deck.getDeckLinkedList().insertLast(new Card(tmp.getCardValue(),tmp.getCardSuit(),tmp.getIntValue()));
+                    deck.getDeckLinkedList().insertLast(new Card(tmp.getCardSuit(),tmp.getCardValue(),tmp.getIntValue()));
                 }
                 table.getCardsOnTable().deleteFirst();
 
@@ -148,18 +141,23 @@ Scanner input=new Scanner(System.in);
         System.out.println("Total Scores ----->  P1 : "+p1.getTotalScore()+" ,P2 : "+p2.getTotalScore()+" ,P3 : "+p3.getTotalScore()+" YOU : "+p4.getTotalScore());
     }
 
+    /**
+     * method that determines the winner of the round and prints the current points
+     * @param p1
+     * @param p2
+     * @param p3
+     * @param p4
+     * @param table
+     */
     public static void determineRoundWinner(BotPlayer p1,BotPlayer p2,BotPlayer p3,HumanPlayer p4,Table table ){
         Card winnerCard=table.getCardsOnTable().getTail();
 
         if(p1.selectedCard.getCardSuit()==p2.selectedCard.getCardSuit() && p2.selectedCard.getCardSuit()==p3.selectedCard.getCardSuit() && p3.selectedCard.getCardSuit()==p4.selectedCard.getCardSuit()){
-            System.out.println(table.getCardsOnTable().toString());
-            System.out.println(p4.getSelectedCard().toString());
             for(int i=0;i<3;i++){
                 Card tmp= table.getCardsOnTable().getNthCard(i);
 
                 if(tmp.getIntValue() > winnerCard.getIntValue()){
                     winnerCard=tmp;
-                    System.out.println("test2 "+winnerCard.toString());
                 }
             }
 
@@ -183,10 +181,8 @@ Scanner input=new Scanner(System.in);
         else if(winnerCard.toString().equals(p3.selectedCard.toString())){p3.increaseTrickCount();System.out.println("-Player 3 won the round ");}
         else if(winnerCard.toString().equals(p4.selectedCard.toString())){p4.increaseTrickCount();System.out.println("-You won the round ");}
         System.out.println(" Trick points are --> p1 : "+p1.getTrickCount()+" ,p2 : "+p2.getTrickCount()+" ,p3 : "+p3.getTrickCount()+" ,YOU : "+p4.getTrickCount());
-
-
-
     }
+
     /**
      * method that checks whether a player won the game or not
      */
@@ -199,28 +195,25 @@ Scanner input=new Scanner(System.in);
         return false;
     }
 
-
-
     /**
      * method that gives points to players according to the rules
      */
     public static void givePoints(Player player) {
         int bid=player.getBid();
-        if(bid <= player.getTrickCount()){
+        if(bid ==0 && player.getTrickCount()>0){
+            player.setTotalScore((player.getTotalScore())-100);
+        }
+        if(bid ==0 && player.getTrickCount() < 0){
+            player.setTotalScore((player.getTotalScore())+100);
+        }
+        else if(bid !=0 && bid <= player.getTrickCount()){
             player.setTotalScore(player.getTotalScore()+bid*10 +(player.getTrickCount()-bid));
         }
-        if(player.getTrickCount() < player.getBid()){
+        else if(player.getTrickCount() < player.getBid()){
             player.setTotalScore(player.getTotalScore()-bid*10);
         }
+
     }
-
-
-
-
-
-
-
-
 
     /**
      * //adds a card to hand from deck
